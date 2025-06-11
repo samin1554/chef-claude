@@ -1,12 +1,81 @@
-# React + Vite
+# Chef Claude - AI Recipe Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that generates recipes based on ingredients you have on hand, powered by the Mistral AI model.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add ingredients to your list
+- Generate recipes using AI
+- Beautiful markdown formatting for recipes
+- Responsive design
+- Loading states and error handling
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Hugging Face Inference API (Mistral AI)
+- React Markdown
+- CSS3
+
+## Project Structure
+
+```
+src/
+├── AI.js              # AI integration with Mistral
+├── Body.jsx           # Main component with recipe generation logic
+├── styles/
+│   └── recipe.css     # Styling for recipe display
+└── main.jsx           # Application entry point
+```
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## How It Works
+
+1. **Adding Ingredients**: Users can add ingredients to their list through a simple form interface.
+2. **Recipe Generation**: When ready, users can click "Get a recipe" to generate a recipe using the Mistral AI model.
+3. **Recipe Display**: The generated recipe is displayed in a clean, formatted layout with proper sections for ingredients, instructions, and tips.
+
+## Code Explanation
+
+### AI Integration (`AI.js`)
+- Uses the Hugging Face Inference API to interact with the Mistral AI model
+- Includes a system prompt that guides the AI to generate well-formatted recipes
+- Handles error cases and provides user-friendly error messages
+
+### Main Component (`Body.jsx`)
+- Manages the application state using React hooks
+- Handles user input for ingredients
+- Controls the recipe generation process
+- Renders the UI with proper loading states and error handling
+
+### Styling (`recipe.css`)
+- Provides a clean, modern design for the recipe display
+- Includes animations for loading states
+- Ensures responsive layout across different screen sizes
+
+## Future Improvements
+
+- Add ability to save favorite recipes
+- Implement ingredient categories
+- Add recipe sharing functionality
+- Support for multiple AI models
+- Add user authentication
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
